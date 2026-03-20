@@ -1,4 +1,5 @@
-from DOMINIO import Matriz,personaje,piso,piso_lava,salida
+from DOMINIO import personaje,piso,piso_lava,salida
+from UICONSOLA import Matriz
 class JUEGO:
     def __init__(self):
         self.juego = Matriz()
