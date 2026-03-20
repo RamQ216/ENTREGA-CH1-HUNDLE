@@ -8,24 +8,6 @@ class EntidadBase(ABC):
     def colocar(self, matriz_objeto):
         pass
 
-class Matriz:
-    def __init__(self):
-        # Mantengo tus nombres de variables
-        self.fila = int(input("ingrese un numero de filas: "))
-        self.columna = int(input("ingrese un numero de columnas: "))
-        self.__tablero = [] # Encapsulado con __ para cumplir el requisito
-
-    @property
-    def tablero(self):
-        return self.__tablero
-
-    def crear(self):
-        self.__tablero = [["." for _ in range(self.columna)] for _ in range(self.fila)]
-        return self.__tablero
-    
-    def mostrar(self):
-        for i in self.__tablero:
-            print(" ".join(i))
 
 class piso(EntidadBase): # Ahora hereda de la clase abstracta
     def interaccion(self, tablero, x, y):
@@ -68,6 +50,7 @@ class piso_lava(piso):
                 trampas_puestas += 1
 
 class personaje:
+
     def __init__(self):
         self.x = 0
         self.y = 0
@@ -120,9 +103,9 @@ class salida(piso):
     
     def comprobar(self, obj_matriz, obj_personaje):
         if obj_personaje.x == obj_matriz.fila-1 and obj_personaje.y == obj_matriz.columna-1:
-            print("\n¡ENCONTRASTE TU CAMINO!")
+            print("\n¡ENCONTRASTE TU CAMINO!lograste comprender que el camino es mas importante que la meta")
             return False
         elif obj_personaje.x == 1 and obj_personaje.y == 9:
-            print("\n¡ENCONTRASTE UNA SALIDA!")
+            print("\n¡ENCONTRASTE UNA SALIDA! pero a que costo te volviste un barco a la deriva")
             return False
         return True
